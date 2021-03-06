@@ -1,0 +1,36 @@
+string class
+
+needed member function:
+string()
+string(const string &)
+string(const char *)
+~string()
+string & operator = (const string &)
+const char & operator [](int) const
+char & operator [](int)
+
+methods:
+size()
+length()
+capacity()
+clear()
+substr()
+append()
+insert()
+resize()
+reserve()
+c_str()
+
+
+reference operators:
+==
+!=
+<
+<=
+>
+>=
+
+stream operators:
+<<
+>>
+
