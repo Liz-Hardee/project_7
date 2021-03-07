@@ -22,7 +22,7 @@ string(const string &)
              sets capacity to charcount + 1
 string(const char *)
 
-// destructor (sets members for string to nullptr)
+// destructor (sets members for string to nullptr)    //shoobetyboop
 ~string()
 
 // assingment operator (assigns the string to the passed string)
