@@ -3,7 +3,7 @@ this is my change
 
 member:
 char * array;     // the character array that holds the string
-int  * capacity   // the number of indexes in the array (includes '\0')
+int  * cap        // the number of indexes in the array (includes '\0')
 int  * charcount; // the number of characters in the array (without '\0')
 
 
@@ -23,7 +23,7 @@ string(const string &)
 // INPUTS: const string passed by reference
 // FUNCTION: sets array value of string to passed char array
              sets charcount to the lenght of the passed char array
-             sets capacity to charcount + 1
+             sets cap to charcount + 1
 string(const char *)
 
 ** Jimi
@@ -43,14 +43,6 @@ const char & operator [](int) const
 char & operator [](int)
 
 methods:
-
-** Jimi
-// returns number of characters up to the null terminator
-int length()
-
-** Rowan
-// return the total number of indexes in the array
-int capacity()
 
 ** Jimi
 // delete array and set to a nullptr
@@ -79,8 +71,8 @@ reserve(int new_cap)
 getters/setters:
 ** Jimi 
 get_array()
-get_capacity()
-get_charcount()
+int length()
+int capacity()
 
 ** Rowan
 set_array()
