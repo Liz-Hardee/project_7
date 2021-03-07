@@ -1,5 +1,6 @@
 string class:
 thanks mom but i'll just go to ikea
+this is my new line for test 2
 
 member:
 char * array;     // the character array that holds the string
