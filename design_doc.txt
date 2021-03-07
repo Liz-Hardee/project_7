@@ -25,6 +25,7 @@ c_str()
 reference operators:
 ==
 !=
+   rowan
 <
 <=
 >
