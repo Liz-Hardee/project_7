@@ -1,25 +1,77 @@
-string class
+string class:
 
-needed member function:
+members:
+char * array;     // the character array that holds the string
+int  * capacity   // the number of indexes in the array (includes '\0')
+int  * charcount; // the number of characters in the array (without '\0')
+
+
+needed member functions:
+// default constructor (called when string is initialized)
 string()
+
+// copy constructor (initializes string to a passed string)
+// INPUTS: const string passed by reference
 string(const string &)
+
+// copy constructor (initializes string to a passed char array)
+// INPUTS: const string passed by reference
+// FUNCTION: sets array value of string to passed char array
+             sets charcount to the lenght of the passed char array
+             sets capacity to charcount + 1
 string(const char *)
+
+// destructor (sets members for string to nullptr)
 ~string()
+
+// assingment operator (assigns the string to the passed string)
 string & operator = (const string &)
+
+// subscript operator (allows for reading specific indexes of string.array * Not For Writing *)
 const char & operator [](int) const
+
+// subscript operator (allows for reading/writing specific indexes of string.array)
 char & operator [](int)
 
 methods:
+
+// maybe not do this one
 size()
-length()
-capacity()
-clear()
-substr()
-append()
-insert()
-resize()
-reserve()
-c_str()
+
+// returns number of characters up to the null terminator
+int length()
+
+// return the total number of indexes in the array
+int capacity()
+
+// delete array and set to a nullptr
+void clear()
+
+// takes an index to start and to end and returns a string of only characters between these
+string * substr(int start, int end)
+
+// adds passed string to the end of this string
+void append(string)
+
+// adds a new string to the middle of an exisiting one beginning at pos
+void insert(int pos, const string str)
+
+// resizes the string from the beginning
+void resize(int new_size)
+
+// allocates more capacity
+reserve(int new_cap)
+
+getters/setters:
+get_array()
+get_capacity()
+get_charcount()
+
+set_array()
+set_capacity()
+set_charcount()
+
+
 
 
 reference operators:
@@ -33,4 +85,3 @@ reference operators:
 stream operators:
 <<
 >>
-
