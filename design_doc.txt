@@ -1,6 +1,7 @@
 string class:
+this is my change
 
-members:
+member:
 char * array;     // the character array that holds the string
 int  * capacity   // the number of indexes in the array (includes '\0')
 int  * charcount; // the number of characters in the array (without '\0')
