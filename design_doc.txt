@@ -7,13 +7,17 @@ int  * charcount; // the number of characters in the array (without '\0')
 
 
 needed member functions:
+
+** Rowan
 // default constructor (called when string is initialized)
 string()
 
+** Rowan
 // copy constructor (initializes string to a passed string)
 // INPUTS: const string passed by reference
 string(const string &)
 
+** Rowan
 // copy constructor (initializes string to a passed char array)
 // INPUTS: const string passed by reference
 // FUNCTION: sets array value of string to passed char array
@@ -21,52 +25,63 @@ string(const string &)
              sets capacity to charcount + 1
 string(const char *)
 
+** Jimi
 // destructor (sets members for string to nullptr)
 ~string()
 
+** Jimi
 // assingment operator (assigns the string to the passed string)
 string & operator = (const string &)
 
+** Jimi
 // subscript operator (allows for reading specific indexes of string.array * Not For Writing *)
 const char & operator [](int) const
 
+** Jimi
 // subscript operator (allows for reading/writing specific indexes of string.array)
 char & operator [](int)
 
 methods:
 
-// maybe not do this one
-size()
-
+** Jimi
 // returns number of characters up to the null terminator
 int length()
 
+** Rowan
 // return the total number of indexes in the array
 int capacity()
 
+** Jimi
 // delete array and set to a nullptr
 void clear()
 
+** Rowan
 // takes an index to start and to end and returns a string of only characters between these
 string * substr(int start, int end)
 
+** Jimi
 // adds passed string to the end of this string
 void append(string)
 
+** Rowan
 // adds a new string to the middle of an exisiting one beginning at pos
 void insert(int pos, const string str)
 
+** Jimi
 // resizes the string from the beginning
 void resize(int new_size)
 
+** Rowan
 // allocates more capacity
 reserve(int new_cap)
 
 getters/setters:
+** Jimi 
 get_array()
 get_capacity()
 get_charcount()
 
+** Rowan
 set_array()
 set_capacity()
 set_charcount()
@@ -74,6 +89,7 @@ set_charcount()
 
 
 
+** Rowan
 reference operators:
 ==
 !=
@@ -82,6 +98,7 @@ reference operators:
 >
 >=
 
+** Jimi
 stream operators:
 <<
 >>
