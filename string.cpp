@@ -1,5 +1,25 @@
 #include "string.h"
 
+// default constructor
+string::string()
+{
+    array      = nullptr;
+    cap        = nullptr;
+    char_count = nullptr;
+}
+
+// copy constructor (char array)
+string::string(const char * char_array)
+{
+    array      = new char [strlen(char_array) + 1];
+    cap        = new int;
+    char_count = new int;
+
+    strcpy(array, char_array);
+    * cap = strlen(array) + 1;
+    * char_count = strlen(array);
+}
+
 // destructor
 string::~string()
 {
@@ -45,7 +65,7 @@ void string::clear()
 {
     if (this->array) 
     {
-        set_array("");
+        strcpy(this->array, "");
         cap = 0;
         char_count = 0;
     }
@@ -54,9 +74,9 @@ void string::clear()
 // adds passed string to end of current string
 void string::append(string right)
 {
-    set_capacity(* cap + right.capacity());
-    set_array(* array + right.get_array()); // NOTE: this might not work
-    set_length(strlen(array));
+    * cap = * cap + right.capacity();
+    strcpy(array, * array + right.get_array());
+    * char_count = strlen(array);
 }
 
 // resizes the string from the beginning
