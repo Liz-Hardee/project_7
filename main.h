@@ -3,4 +3,6 @@
 
 #include "string.h"
 
+void test_log(string &);
+
 #endif
