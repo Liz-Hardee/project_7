@@ -21,6 +21,7 @@ class string
         ~string(); // destructor
 
         // operators
+        string & operator = (const string & right);
         const char & operator [](int) const; // subscript operator for read
         char & operator [](int);             // subscript operator for write
 
