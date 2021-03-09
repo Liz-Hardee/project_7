@@ -76,7 +76,7 @@ void string::clear()
 // adds passed string to end of current string
 void string::append(string & right)
 {
-    * cap = * cap + right.capacity();
+    * cap = * cap + right.length();
     array = strcat(array, right.get_array());
     * char_count = strlen(array);
 }

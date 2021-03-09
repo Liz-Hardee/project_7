@@ -30,10 +30,10 @@ int main()
     }
     std::cout << std::endl;
     std::cout << std::endl;
-
+    
     test_string.append(test_string2);
     
-    std::cout << "APPEND TEST" << std::endl;
+    std::cout << "STRING APPEND TEST" << std::endl;
     test_log(test_string);
 
     test_string.resize(3);
