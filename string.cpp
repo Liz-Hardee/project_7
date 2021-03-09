@@ -132,18 +132,26 @@ int string::length()
 // friends
 
 // input stream operator
-// NOTE: this needs fixing
 std::istream & operator >> (std::istream & in, string & right)
 {
-    int  * count = new int;
-    char * byte  = new char;
-    
-    // step through input stream
-    while (in.peek() != EOF && in.peek() != '\n')
-    {
-        * byte = in.get();
-        right[* count++] = * byte;
-    }
+    char temp_array [100];
+
+    in.get(temp_array, 100, '\n');
+
+    if (right.array != nullptr) delete [] right.array;
+    if (right.cap != nullptr) delete right.cap;
+    if (right.char_count != nullptr) delete right.char_count;
+
+    right.array      = new char [strlen(temp_array) + 1];
+    right.cap        = new int;
+    right.char_count = new int;
+
+    * right.cap = strlen(temp_array) + 1;
+    * right.char_count = strlen(temp_array);
+    for (int i = 0; i < * right.cap; i++)
+        right[i] = temp_array[i];
+    right[* right.cap] = '\0';
+
     return in;
 }
 
