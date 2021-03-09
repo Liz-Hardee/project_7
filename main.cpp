@@ -42,10 +42,10 @@ int main()
     test_log(test_string);
 
     // NOTE: this needs fixing
-    //std::cout << "INPUT STREAM OPERATOR TEST" << std::endl;
-    //std::cout << "Please enter a word: ";
-    //std::cin >> test_string;
-    //std::cout << test_string << std::endl << std::endl;
+    std::cout << "INPUT STREAM OPERATOR TEST" << std::endl;
+    std::cout << "Please enter a word: ";
+    std::cin >> test_string;
+    std::cout << test_string << std::endl << std::endl;
 
     std::cout << "OUTPUT STREAM OPERATOR TEST" << std::endl;
     std::cout << test_string << std::endl << std::endl;

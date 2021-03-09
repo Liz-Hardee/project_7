@@ -81,6 +81,14 @@ void string::append(string & right)
     * char_count = strlen(array);
 }
 
+// adds passed char * to end of current string
+void string::append(char * right)
+{
+    * cap = * cap + strlen(right) + 1;
+    array = strcat(array, right);
+    * char_count = strlen(array);
+}
+
 // resizes the string from the beginning
 void string::resize(int new_size)
 {
@@ -127,29 +135,15 @@ int string::length()
 // NOTE: this needs fixing
 std::istream & operator >> (std::istream & in, string & right)
 {
-    int * count = new int;
-    count = 0;
-
-    // clear out string
-    if (right.array != nullptr) right.clear();
-
-    // peek step though input stream, counting characters
-    while (in.peek() != EOF && in.peek() != '\n') count++;
-
-    // reinitialize string
-    right.array      = new char [* count];
-    right.cap        = new int;
-    right.char_count = new int;
-
-    while (in.peek() != EOF && in.peek() != '\n') in >> right.array;
-    std::cin.ignore(* count, '\n');     // throw away newline
-
-    delete count;
-
-    // assign other members;
-    * right.cap = strlen(right.array) + 1;
-    * right.char_count = strlen(right.array);
-
+    int  * count = new int;
+    char * byte  = new char;
+    
+    // step through input stream
+    while (in.peek() != EOF && in.peek() != '\n')
+    {
+        * byte = in.get();
+        right[* count++] = * byte;
+    }
     return in;
 }
 

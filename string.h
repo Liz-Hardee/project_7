@@ -38,6 +38,7 @@ class string
         // methods
         void clear();                   // set array to nullptr
         void append(string &);          // appends string
+        void append(char *);          // appends string
         void insert(int, const string); // inserts string
         void resize(int);               // resizes string (smaller)
         void reserve(int);              // resizes string (bigger)
