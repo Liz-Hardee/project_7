@@ -77,7 +77,7 @@ void string::clear()
 void string::append(string & right)
 {
     * cap = * cap + right.capacity();
-    strcpy(array, * array + right.get_array());
+    array = strcat(array, right.get_array());
     * char_count = strlen(array);
 }
 
