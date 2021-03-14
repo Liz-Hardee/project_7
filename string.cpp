@@ -161,3 +161,113 @@ std::ostream & operator << (std::ostream & out, string & right)
     out << right.get_array();
     return out;
 }
+
+//reference operators
+
+bool operator== (string& left, string &right)
+{
+/*
+	I am certain that there's a denser and/or more efficient method for this,
+	but I am being very careful to avoid a seg fault. grug code only. 
+
+		"It just works." - Todd Howard
+*/
+	if (left.capacity() <= right.capacity())
+		{
+			if (strncmp(left.get_array(), right.get_array(), left.capacity()) == 0)
+				return 1;
+			else
+				return 0;
+		}
+	else
+		{
+                        if (strncmp(left.get_array(), right.get_array(), right.capacity()) == 0)
+                                return 1;
+                        else
+	                        return 0;
+                }
+}
+
+bool operator<= (string& left, string& right)
+{
+        if (left.capacity() <= right.capacity())
+                {
+                        if (strncmp(left.get_array(), right.get_array(), left.capacity()) <= 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+        else
+                {
+                        if (strncmp(left.get_array(), right.get_array(), right.capacity()) <= 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+
+}
+
+bool operator< (string& left, string& right)
+{
+        if (left.capacity() <= right.capacity())
+                {
+                        if (strncmp(left.get_array(), right.get_array(), left.capacity()) < 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+        else
+                {
+                        if (strncmp(left.get_array(), right.get_array(), right.capacity()) < 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+	return 0;
+
+}
+
+bool operator>= (string& left, string& right)
+{
+        if (left.capacity() <= right.capacity())
+                {
+                        if (strncmp(left.get_array(), right.get_array(), left.capacity()) >= 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+        else
+                {
+                        if (strncmp(left.get_array(), right.get_array(), right.capacity()) >= 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+
+}
+
+bool operator> (string& left, string& right)
+{
+        if (left.capacity() <= right.capacity())
+                {
+                        if (strncmp(left.get_array(), right.get_array(), left.capacity()) > 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+        else
+                {
+                        if (strncmp(left.get_array(), right.get_array(), right.capacity()) > 0)
+                                return 1;
+                        else
+                                return 0;
+                }
+
+}
+
+bool operator!= (string& left, string& right)
+{
+        return !(left==right);
+}   //heh heh
+
+
