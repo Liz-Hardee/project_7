@@ -95,3 +95,61 @@ reference operators:
 stream operators:
 <<
 >>
+
+--------------------------------------------------------------------------------
+
+Singly Linked List
+
+data members:
+int * size;
+int * capacity;
+string  * index;
+element * next;
+element * prev;
+element * head;
+element * tail;
+
+// default constructor
+element();
+
+//destructor
+~element();
+
+//copy constructor
+element(const element &);
+
+//assignment operator
+element & operator = (const element &)
+
+// output stream
+friend std::ostream & operator << (std::ostream &, const list &);
+
+//input stream
+friend std::istream & operator  << (std::istream &, list &);
+
+//empty
+//outputs whether the list is empty
+bool is_empty() const;
+
+//subscript for reading
+const element & operator [] (int) const
+
+//subscript for writing
+element & operator [] (int);
+
+//insert (positional)
+bool insert(element *, int);
+
+//insert (ordered)
+bool insert(element *);
+
+//erase all contents of the list
+bool erase();
+
+// relational operators
+bool operator <  (const element &, const element &)
+bool operator <= (const element &, const element &)
+bool operator == (const element &, const element &)
+bool operator != (const element &, const element &)
+bool operator >= (const element &, const element &)
+bool operator >  (const element &, const element &)
