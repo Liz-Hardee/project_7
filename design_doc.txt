@@ -98,7 +98,7 @@ stream operators:
 
 --------------------------------------------------------------------------------
 
-Singly Linked List
+Doubly Linked List
 
 data members:
 int * size;
@@ -109,43 +109,56 @@ element * prev;
 element * head;
 element * tail;
 
+JIMI
 // default constructor
 element();
 
+JIMI
 //destructor
 ~element();
 
+ROWAN
 //copy constructor
 element(const element &);
 
+ROWAN
 //assignment operator
 element & operator = (const element &)
 
+JIMI
 // output stream
 friend std::ostream & operator << (std::ostream &, const list &);
 
+JIMI
 //input stream
 friend std::istream & operator  << (std::istream &, list &);
 
+ROWAN
 //empty
 //outputs whether the list is empty
 bool is_empty() const;
 
+JIMI
 //subscript for reading
 const element & operator [] (int) const
 
+JIMI
 //subscript for writing
 element & operator [] (int);
 
+ROWAN
 //insert (positional)
 bool insert(element *, int);
 
+ROWAN
 //insert (ordered)
 bool insert(element *);
 
+ROWAN ** MAYBE **
 //erase all contents of the list
 bool erase();
 
+JIMI
 // relational operators
 bool operator <  (const element &, const element &)
 bool operator <= (const element &, const element &)
