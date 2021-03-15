@@ -131,7 +131,7 @@ friend std::ostream & operator << (std::ostream &, const list &);
 
 JIMI
 //input stream
-friend std::istream & operator  << (std::istream &, list &);
+friend std::istream & operator >> (std::istream &, list &);
 
 ROWAN
 //empty
