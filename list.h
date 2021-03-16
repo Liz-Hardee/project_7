@@ -13,24 +13,28 @@ class list
             Node   * next;
             Node   * prev;
             
-            Node();                           // default constructor
-            Node & operator = (const Node &); // assignment operator
+            Node() // default constructor
+            {
+                data = nullptr;
+                next = nullptr;
+            }                
         };
         // node pointers
         Node * head;
         Node * tail;
 
-        list();                              // default constructor
+    public:
+        list();  // default constructor
+        ~list(); // destructor
 
         // member functions
         bool is_empty() const;       // returns whether list is empty
-        bool insert(Node *, int);    // insert (by postion)
         bool insert(Node *);         // inset  (ordered)
-        bool erase();                // erase all elements of list
+        void erase();                // erase all elements of list
 
         // subscript operators
-        const list & operator [] (int) const; // for reading
-        list & operator [] (int);             // for writing
+        const string & operator [] (int) const; // for reading
+        string & operator [] (int);             // for writing
 
         // friends
         friend std::ostream & operator << (std::ostream &, const list &);
@@ -38,6 +42,3 @@ class list
 };
 
 #endif
-
-
-
