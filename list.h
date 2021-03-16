@@ -3,45 +3,39 @@
 
 #include "string.h"
 
-class element
+class list
 {
-    // data members
-    int * size;
-    int * capacity;
-    string * index;
+    private:
+        // node for the linked list
+        struct Node
+        {
+            string * data;
+            Node   * next;
+            Node   * prev;
+            
+            Node();                           // default constructor
+            Node & operator = (const Node &); // assignment operator
+        };
+        // node pointers
+        Node * head;
+        Node * tail;
 
-    // node pointers
-    element * next;
-    element * prev;
-    element * head;
-    element * tail;
+        list();                              // default constructor
 
-    element();                              // default constructor
-    element(const element &);               // copy constructor
-    element & operator = (const element &); // assignment operator
+        // member functions
+        bool is_empty() const;       // returns whether list is empty
+        bool insert(Node *, int);    // insert (by postion)
+        bool insert(Node *);         // inset  (ordered)
+        bool erase();                // erase all elements of list
 
-    // member functions
-    bool is_empty() const;       // returns whether list is empty
-    bool insert(element *, int); // insert (by postion)
-    bool insert(element *);      // inset  (ordered)
-    bool erase();                // erase all elements of list
+        // subscript operators
+        const list & operator [] (int) const; // for reading
+        list & operator [] (int);             // for writing
 
-    // subscript operators
-    const element & operator [] (int) const; // for reading
-    element & operator [] (int);             // for writing
-
-    // friends
-    friend std::ostream & operator << (std::ostream &, const element &);
-    friend std::istream & operator >> (std::istream &, element &);
+        // friends
+        friend std::ostream & operator << (std::ostream &, const list &);
+        friend std::istream & operator >> (std::istream &, list &);
 };
-
-// relational operators
-bool operator <  (const element &, const element &);
-bool operator <= (const element &, const element &);
-bool operator == (const element &, const element &);
-bool operator != (const element &, const element &);
-bool operator >= (const element &, const element &);
-bool operator >  (const element &, const element &);
 
 #endif
 
