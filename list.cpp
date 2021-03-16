@@ -42,5 +42,19 @@ string & list::operator [] (int index)
     for (int i = 0; i < index; i++)
         curr = curr->next;
     return * curr->data;
+}
 
+// print list to access node data
+std::ostream & list::print_list(std::ostream & out) const
+{
+    Node * curr;
+    for (curr = head; curr; curr = curr->next)
+        out << * curr->data << std::endl;
+    return out;
+}
+
+// output operator to print list
+std::ostream & operator << (std::ostream & out, const list & out_list)
+{
+    return out_list.print_list(out);
 }

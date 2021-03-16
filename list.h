@@ -36,9 +36,10 @@ class list
         const string & operator [] (int) const; // for reading
         string & operator [] (int);             // for writing
 
-        // friends
-        friend std::ostream & operator << (std::ostream &, const list &);
-        friend std::istream & operator >> (std::istream &, list &);
+        std::ostream & print_list(std::ostream & out) const;
 };
+
+std::ostream & operator << (std::ostream &, const list &);
+std::istream & operator >> (std::istream &, list &);
 
 #endif
